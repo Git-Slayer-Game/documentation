@@ -4,6 +4,8 @@ Welcome to the **Git Slayer Game** documentation repository! This project turns 
 
 > **Note**: This repository is dedicated solely to documentation. Actual game development, API, sprites, and browser extension components are managed in separate repositories.
 
+![gitslayer-icon-small](https://github.com/user-attachments/assets/a1a53c25-9280-471f-8d51-e2ca6d35aefa)
+
 ## 🎮 Game Overview
 
 In **Git Slayer Game**, contributors choose a character class that aligns with their coding style, such as Knight, Sorcerer, Paladin, or Druid. Each class has unique abilities and bonuses that enhance specific types of contributions. Contributors earn XP by performing GitHub/GitLab activities, leveling up to unlock new abilities and earn powerful items. 
