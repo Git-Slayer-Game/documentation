@@ -86,9 +86,9 @@ The game uses the following webhook events to recognize user activities, reward 
 | Push (Commit)                | +10 XP        | Low                  | Bonus XP for bug fixes and improvements.      |
 | Pull/Merge Request Merged    | +20 XP        | Moderate             | Rewards emphasize merges over releases.       |
 | Pull/Merge Request Created   | +5 XP         | Low                  | Reward for initiating requests.               |
-| Issue Closed                 | +10 XP        | Low                  | Extra XP for high-priority issues.            |
+| Issue Closed                 | +10 XP        | Moderate             | Extra XP for high-priority issues.            |
 | Comment (Issue/PR)           | +5 XP         | Rare                 | Encourages collaborative discussions.         |
-| Release Published            | +5 XP         | High for major       | Reduced due to infrequent usage.              |
+| Release Published            | +5 XP         | Low                  | Reduced due to infrequent usage.              |
 
 ---
 
