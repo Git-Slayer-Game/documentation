@@ -1,103 +1,111 @@
 # Git Slayer Game - GitLab/GitHub Activities and XP Rewards
 
-The Git Slayer Game uses GitHub and GitLab webhook events to track contributors' activities in real time. These events allow us to automate XP rewards, item drops, and other in-game effects based on specific actions in the repositories. This document outlines the activities recognized by GitHub and GitLab and how each action contributes to the game.
+The Git Slayer Game tracks contributors' activities using GitHub and GitLab webhook events, automating XP rewards, item drops, and class effects based on contributions. This updated system emphasizes frequent activities like merge requests over less common actions like releases.
+
+---
 
 ## GitHub and GitLab Webhook Events Overview
 
-The following webhook events are utilized to capture user activities, reward XP, and trigger item drops or class abilities based on contribution type. Each action is matched to its associated XP reward and other potential in-game effects.
+The game uses the following webhook events to recognize user activities, reward XP, and trigger in-game effects. Rewards have been adjusted to reflect the frequency and impact of each activity.
+
+---
 
 ### 1. Push Events
 
 - **Event**: `push`
 - **Description**: Triggered when commits are pushed to a repository.
-- **GitHub Equivalent**: [Push Event](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push)
-- **GitLab Equivalent**: [Push Event](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#push-events)
-- **In-Game Impact**:
-  - **XP Reward**: +10 XP per commit.
-  - **Item Drop Chance**: Small chance of random item drop for significant commits (e.g., refactoring or large feature addition).
-  - **Class Ability Activation**:
-    - **Knight**: Additional XP for performance improvement or bug fix-related commits.
-    - **Sorcerer**: XP boost if the commit introduces a new technology or library.
+- **XP Reward**: 
+  - **Base Reward**: +10 XP per commit.
+  - **Bonus XP**: +5 XP for commits tagged as bug fixes, refactors, or performance improvements.
+- **Item Drop Chance**: Small chance for significant commits, such as adding new features or substantial changes.
+- **Class Abilities**:
+  - **Knight**: Gains bonus XP for bug fixes or performance-related commits.
+  - **Sorcerer**: Gains an XP boost for introducing new libraries or technologies.
+
+---
 
 ### 2. Pull Request / Merge Request Events
 
 - **Event**: `pull_request` (GitHub) / `merge_request` (GitLab)
 - **Description**: Triggered when a pull/merge request is created, updated, merged, or closed.
-- **GitHub Equivalent**: [Pull Request Event](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request)
-- **GitLab Equivalent**: [Merge Request Event](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#merge-requests-events)
-- **In-Game Impact**:
-  - **XP Reward**: +25 XP for each merged pull/merge request.
-  - **Item Drop Chance**: Higher chance of item drop for complex or innovative merges.
-  - **Class Ability Activation**:
-    - **Knight**: Reduced cooldown on merge approvals due to stability and security checks.
-    - **Sorcerer**: Chance of bonus XP for innovative or complex pull requests.
-    - **Paladin**: Additional XP for collaborative pull requests involving multiple reviewers.
+- **XP Reward**: 
+  - **Merge**: +20 XP for successfully merging a request.
+  - **Create/Update**: +5 XP for creating or updating a merge request.
+- **Item Drop Chance**: Moderate for innovative or complex merges.
+- **Class Abilities**:
+  - **Knight**: Reduced cooldown on class abilities for stability/security merges.
+  - **Sorcerer**: Bonus XP for innovative or challenging merges.
+  - **Paladin**: Gains additional XP for merges involving multiple collaborators.
+
+---
 
 ### 3. Issue Events
 
 - **Event**: `issues`
 - **Description**: Triggered when an issue is created, updated, or closed.
-- **GitHub Equivalent**: [Issues Event](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#issues)
-- **GitLab Equivalent**: [Issue Event](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#issues-events)
-- **In-Game Impact**:
-  - **XP Reward**: +15 XP for closing an issue.
-  - **Item Drop Chance**: Small chance of item drop for high-priority issue closures.
-  - **Class Ability Activation**:
-    - **Knight**: Bonus XP for security or performance-related issue resolutions.
-    - **Paladin**: XP boost for resolving issues that enhance documentation or collaboration.
-    - **Druid**: Extra XP for resolving issues across different areas (e.g., frontend and backend).
+- **XP Reward**: 
+  - **Closing**: +10 XP per issue.
+  - **High-Priority Issues**: +5 bonus XP for closing high-priority issues.
+- **Item Drop Chance**: Small chance for high-priority issue closures.
+- **Class Abilities**:
+  - **Knight**: Gains bonus XP for resolving security or performance-related issues.
+  - **Paladin**: Gains an XP boost for resolving issues that enhance collaboration or documentation.
+  - **Druid**: Gains extra XP for resolving issues that span multiple project areas.
 
-### 4. Comment Events (Issues and Pull Requests)
+---
+
+### 4. Comment Events (Issues and Merge Requests)
 
 - **Event**: `issue_comment` (GitHub) / `note` (GitLab)
-- **Description**: Triggered when a comment is added to an issue or pull request.
-- **GitHub Equivalent**: [Issue Comment Event](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#issue_comment)
-- **GitLab Equivalent**: [Note Event](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#comments)
-- **In-Game Impact**:
-  - **XP Reward**: +5 XP for each constructive comment or feedback.
-  - **Item Drop Chance**: Occasional random item drop for high-quality feedback.
-  - **Class Ability Activation**:
-    - **Paladin**: XP boost for collaborative comments that facilitate teamwork.
-    - **Druid**: Bonus XP for comments that span multiple areas (e.g., discussing both backend and frontend impacts).
+- **Description**: Triggered when a comment is added to an issue or merge request.
+- **XP Reward**: +5 XP for each constructive or insightful comment.
+- **Item Drop Chance**: Rare chance for high-quality feedback or impactful comments.
+- **Class Abilities**:
+  - **Paladin**: Gains bonus XP for collaborative comments that facilitate teamwork.
+  - **Druid**: Gains extra XP for comments that address cross-domain impacts (e.g., frontend and backend).
+
+---
 
 ### 5. Release Events
 
 - **Event**: `release`
 - **Description**: Triggered when a release is published.
-- **GitHub Equivalent**: [Release Event](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#release)
-- **GitLab Equivalent**: [Release Event](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#releases)
-- **In-Game Impact**:
-  - **XP Reward**: +30 XP for each release, representing the significant effort in delivering new features or versions.
-  - **Item Drop Chance**: Higher chance of rare item drop for major releases.
-  - **Class Ability Activation**:
-    - **Knight**: Additional XP for stability-focused releases.
-    - **Sorcerer**: Random bonus XP for releases with innovative features.
-    - **Druid**: Extra XP for versatile releases that impact multiple project areas.
+- **XP Reward**: **+5 XP per release**, reduced to reflect its less frequent use.
+- **Item Drop Chance**: High for major releases, rare for patch-level releases.
+- **Class Abilities**:
+  - **Knight**: Gains small bonus XP for stability-focused releases.
+  - **Sorcerer**: Gains random bonus XP for releases introducing innovative features.
+  - **Druid**: Gains minor extra XP for releases that impact multiple areas.
+
+---
 
 ## Summary of XP Rewards
 
-| GitLab/GitHub Activity       | XP Reward | Item Drop Chance       | Notes                                             |
-|------------------------------|-----------|-------------------------|---------------------------------------------------|
-| Push (Commit)                | +10 XP    | Low                    | Higher XP for bug fixes and performance tweaks.   |
-| Pull/Merge Request Merged    | +25 XP    | Moderate               | Higher drop rate for complex/innovative requests. |
-| Issue Closed                 | +15 XP    | Low                    | Extra XP for resolving high-priority issues.      |
-| Comment (Issue/PR)           | +5 XP     | Occasional             | Rewarding constructive feedback and collaboration.|
-| Release Published            | +30 XP    | High for major releases| Significant reward for version releases.          |
+| **GitLab/GitHub Activity**   | **XP Reward** | **Item Drop Chance** | **Notes**                                     |
+|------------------------------|---------------|-----------------------|-----------------------------------------------|
+| Push (Commit)                | +10 XP        | Low                  | Bonus XP for bug fixes and improvements.      |
+| Pull/Merge Request Merged    | +20 XP        | Moderate             | Rewards emphasize merges over releases.       |
+| Pull/Merge Request Created   | +5 XP         | Low                  | Reward for initiating requests.               |
+| Issue Closed                 | +10 XP        | Low                  | Extra XP for high-priority issues.            |
+| Comment (Issue/PR)           | +5 XP         | Rare                 | Encourages collaborative discussions.         |
+| Release Published            | +5 XP         | High for major       | Reduced due to infrequent usage.              |
+
+---
 
 ## Integration Setup
 
-To use these webhooks for game activities, you will need to configure GitHub and GitLab webhook settings for each repository linked to the Git Slayer Game. Once configured, each webhook will send activity data to the game’s API, where XP, item drops, and class abilities are processed based on contribution types.
+To enable the Git Slayer Game:
 
-### Configuring Webhooks
-
-1. **GitHub**:
-   - Go to your repository’s settings and navigate to **Webhooks**.
+1. **GitHub Setup**:
+   - Go to your repository settings and navigate to **Webhooks**.
    - Add a new webhook with the target URL of the Git Slayer Game API.
-   - Select individual events (e.g., `push`, `pull_request`, `issues`, `issue_comment`, `release`) to monitor the specific activities listed above.
+   - Enable specific events: `push`, `pull_request`, `issues`, `issue_comment`, and `release`.
 
-2. **GitLab**:
-   - Go to your repository’s settings and navigate to **Webhooks**.
+2. **GitLab Setup**:
+   - Go to your project settings and navigate to **Webhooks**.
    - Add a new webhook pointing to the Git Slayer Game API.
-   - Enable the desired events (e.g., `Push Events`, `Merge Request Events`, `Issue Events`, `Note Events`, `Release Events`).
+   - Enable events: `Push Events`, `Merge Request Events`, `Issue Events`, `Note Events`, and `Release Events`.
 
-With these configurations, your game API will receive real-time data, allowing it to calculate XP, handle item drops, and activate class abilities as players contribute to the project.
+3. **Game API Integration**:
+   - Webhook events will send real-time activity data to the Git Slayer Game API.
+   - The API processes these events to calculate XP, handle item drops, and activate class abilities.
