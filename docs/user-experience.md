@@ -1,7 +1,3 @@
-Here is a draft for `user-experience.md`, focusing on providing a seamless gamification experience that enhances productivity without interrupting or distracting users:
-
----
-
 # Git Slayer - User Experience Guide
 
 The **Git Slayer Game** aims to enhance the developer experience on GitHub/GitLab through subtle, non-intrusive gamification. This guide provides an overview of the intended user experience, including leveling paths, item rewards, and example gameplay scenarios. Our priority is to ensure that **Git Slayer** complements daily workflows without disrupting the developer's focus or adding unnecessary complexity.
