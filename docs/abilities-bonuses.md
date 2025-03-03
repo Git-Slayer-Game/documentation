@@ -4,7 +4,7 @@ This document provides details on the unique abilities and bonuses associated wi
 
 ## 1. Abilities Overview by Class
 
-Each class has two unique abilities that provide bonuses in specific areas. Abilities scale based on tiers, ensuring that bonuses stay impactful as contributors level up.
+Each class has two unique abilities that provide bonuses in specific areas. Abilities scale based on tiers, ensuring that bonuses stay impactful as contributors level up. Additionally, **Dragon Battle Rewards** introduce class-specific XP boosts for successful victories.
 
 ### Knight (Stability & Robustness)
 
@@ -14,14 +14,14 @@ Each class has two unique abilities that provide bonuses in specific areas. Abil
      XP_{bonus} = XP_{base} \times (1 + R \times (T - 1))
      \]
    - Where:
-     - \( XP_{base} \): Base XP gain (e.g., 10%).
+     - \( XP_{base} \): Base XP gain (e.g., 15%).
      - \( R \): Scaling rate per tier (e.g., 0.2 for a 20% increase).
      - \( T \): Current tier.
-
+   
    - **Example Calculation**:
-     - **Tier 1**: \( XP_{bonus} = 10\% \)
-     - **Tier 2**: \( XP_{bonus} = 10\% + (10\% \times 0.2) = 12\% \)
-     - **Tier 3**: \( XP_{bonus} = 12\% + (12\% \times 0.2) = 14.4\% \)
+     - **Tier 1**: +15% XP
+     - **Tier 2**: +18% XP
+     - **Tier 3**: +21.6% XP
 
 2. **Shield of Fortification**: Reduces the cooldown (review/merge wait time) on approved code reviews.
    - **Formula**:
@@ -35,11 +35,12 @@ Each class has two unique abilities that provide bonuses in specific areas. Abil
 
    - **Example Calculation**:
      - **Tier 1**: 10% reduction.
-     - **Tier 2**: 11%.
-     - **Tier 3**: 12.1%.
+     - **Tier 2**: 11% reduction.
+     - **Tier 3**: 12.1% reduction.
+
+3. **Dragon Battle Bonus**: Knights earn **+25% XP** when participating in **defensive battles** during team-based events.
 
 ---
-
 ### Sorcerer (Innovation & Creativity)
 
 1. **Staff of Ingenuity**: Increases XP gain for introducing new features or libraries.
@@ -53,19 +54,20 @@ Each class has two unique abilities that provide bonuses in specific areas. Abil
      - \( T \): Current tier.
 
    - **Example Calculation**:
-     - **Tier 1**: 15%.
-     - **Tier 2**: 17.25%.
-     - **Tier 3**: 19.8%.
+     - **Tier 1**: 15% XP boost.
+     - **Tier 2**: 17.25% XP boost.
+     - **Tier 3**: 19.8% XP boost.
 
-2. **Spell of Insight**: Random bonus XP for complex or innovative pull requests.
+2. **Spell of Insight**: Provides a chance of **bonus XP** when submitting complex pull requests.
    - **Formula**:
      \[
      Bonus\_XP = Base\_XP \times Random\_Factor
      \]
-   - The random factor varies per tier, increasing the chance and size of the bonus.
+   - The random factor increases per tier, boosting XP potential.
+
+3. **Dragon Battle Bonus**: Sorcerers **gain 2x XP for feature-based challenges** in Dragon Battles.
 
 ---
-
 ### Paladin (Collaboration & Documentation)
 
 1. **Banner of Teamwork**: Adds bonus XP for code reviews.
@@ -79,27 +81,28 @@ Each class has two unique abilities that provide bonuses in specific areas. Abil
      - \( T \): Current tier.
 
    - **Example Calculation**:
-     - **Tier 1**: 10 XP.
-     - **Tier 2**: 12 XP.
-     - **Tier 3**: 14 XP.
+     - **Tier 1**: +10 XP.
+     - **Tier 2**: +12 XP.
+     - **Tier 3**: +14 XP.
 
-2. **Book of Knowledge**: Increases chance for rare item drops on documentation contributions.
+2. **Book of Knowledge**: Increases the chance for rare item drops on documentation contributions.
    - **Formula**:
      \[
      Drop\_Chance = Base\_Chance \times (1 + D \times (T - 1))
      \]
    - Where:
      - \( Base\_Chance \): Initial drop chance (e.g., 5%).
-     - \( D \): Drop rate increment (e.g., 0.05 for each tier).
+     - \( D \): Drop rate increment (e.g., 0.05 per tier).
      - \( T \): Current tier.
 
    - **Example Calculation**:
-     - **Tier 1**: 5%.
-     - **Tier 2**: 5.5%.
-     - **Tier 3**: 6%.
+     - **Tier 1**: 5% chance.
+     - **Tier 2**: 5.5% chance.
+     - **Tier 3**: 6% chance.
+
+3. **Dragon Battle Bonus**: Paladins earn **+30% XP for leading cooperative battles**, rewarding teamwork.
 
 ---
-
 ### Druid (Adaptability & Versatility)
 
 1. **Mantle of Versatility**: Grants XP bonuses for contributions across various project areas.
@@ -113,9 +116,9 @@ Each class has two unique abilities that provide bonuses in specific areas. Abil
      - \( T \): Current tier.
 
    - **Example Calculation**:
-     - **Tier 1**: 10%.
-     - **Tier 2**: 12%.
-     - **Tier 3**: 14.4%.
+     - **Tier 1**: 10% XP.
+     - **Tier 2**: 12% XP.
+     - **Tier 3**: 14.4% XP.
 
 2. **Amulet of Adaptation**: Increases XP for non-code tasks like CI/CD configurations.
    - **Formula**:
@@ -132,17 +135,14 @@ Each class has two unique abilities that provide bonuses in specific areas. Abil
      - **Tier 2**: 10 XP.
      - **Tier 3**: 12 XP.
 
----
+3. **Dragon Battle Bonus**: Druids earn **+20% XP for adaptable strategies** during battles.
 
 ## 2. Summary Table of Abilities
 
 | Class      | Ability Name          | Tier 1 Effect                        | Tier 2 Effect                      | Tier 3 Effect                      |
 |------------|------------------------|--------------------------------------|------------------------------------|------------------------------------|
-| **Knight** | Armor of Resilience    | +10% XP for bug fixes                | +12% XP                            | +14.4% XP                          |
+| **Knight** | Armor of Resilience    | +15% XP for bug fixes                | +18% XP                            | +21.6% XP                          |
 |            | Shield of Fortification| -10% cooldown                        | -11% cooldown                      | -12.1% cooldown                    |
 | **Sorcerer**| Staff of Ingenuity    | +15% XP for new features             | +17.25% XP                         | +19.8% XP                          |
-|            | Spell of Insight       | Random bonus XP                      | Increased chance                   | Higher chance and bonus            |
 | **Paladin**| Banner of Teamwork     | +10 XP for code reviews              | +12 XP                             | +14 XP                             |
-|            | Book of Knowledge      | 5% rare item drop on docs            | 5.5% drop chance                   | 6% drop chance                     |
 | **Druid**  | Mantle of Versatility  | +10% XP for versatile contributions  | +12% XP                            | +14.4% XP                          |
-|            | Amulet of Adaptation   | +8 XP for non-code tasks             | +10 XP                             | +12 XP                             |

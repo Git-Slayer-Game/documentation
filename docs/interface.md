@@ -11,7 +11,7 @@ The **Git Slayer** interface is designed to interact directly with contributors�
 - **XP and Level Display**: Visual tracker for XP, levels, and progress towards the next level.
 - **Class and Equipment Panel**: Displays class information, equipped items, and active bonuses.
 - **Game Notifications**: Real-time notifications for achievements, milestones, and significant actions.
-- **Dynamic Responses**: The interface reacts to game events with animations and sounds (e.g., celebrating level-ups, notifying item drops, or showing visual effects during battles).
+- **Dragon Battle Visuals**: Special effects (fireworks/confetti) for milestone battles at Levels 10, 25, 50, 75, 100, and beyond.
 - **Break/Fail Visuals**: When the player "dies" or loses a conflict, the interface can display “broken” effects, blurring or distorting the screen temporarily.
 - **Victory Celebrations**: When defeating a dragon or achieving major milestones, celebratory effects (e.g., fireworks, confetti) overlay the screen, making accomplishments feel impactful.
 
@@ -24,6 +24,7 @@ The XP and level tracker sits prominently in the addon overlay, showing current 
 - **Location**: Top-right corner or a sidebar overlay.
 - **Details**: Displays current level, XP, and a progress bar to the next level.
 - **Animation**: Pulses or flashes on leveling up, making progress visually rewarding.
+- **Dragon Battle Effects**: Special animations for milestone levels (fireworks, glowing progress bar on level-up).
 
 ### 2.2 Class and Equipment Panel
 
@@ -40,6 +41,7 @@ Notifications appear in real-time for activities like leveling up, earning new i
 - **Location**: Bottom-right corner, with notifications stacking if multiple events occur.
 - **Details**: Displays short descriptions, such as “Level Up! Reached Level 10!” or “You’ve earned the Knight’s Shield of Resilience.”
 - **Animation**: Notifications slide in with sound effects, then fade out after a few seconds.
+- **Milestone Alerts**: Special visual and sound effects for Levels 10, 25, 50, 75, and 100.
 
 ### 2.4 Interface Reactions to Game Events
 
@@ -79,11 +81,11 @@ The **Git Slayer** interface relies on GitHub/GitLab activities to update stats 
 
 ### Activity Mappings and Triggers
 
-- **Commits**: +10 XP, visual notification of XP gain.
-- **Pull Requests Merged**: +25 XP, potential for rare item drops with visual and sound notifications.
-- **Issue Resolution**: +15 XP, increases progress in XP bar with minor animation.
-- **Code Reviews**: +20 XP, collaboration bonuses trigger depending on class abilities.
-- **Documentation Updates**: +15 XP, special bonuses for Paladin class with animation on bonus activation.
+- **Commits**: +15 XP (1-50), +10 XP (51-100), +8 XP (101+), visual notification of XP gain.
+- **Pull Requests Merged**: +35 XP (1-50), +30 XP (51-100), +25 XP (101+), potential for rare item drops with visual and sound notifications.
+- **Issue Resolution**: +20 XP (1-50), +15 XP (51-100), +12 XP (101+), increases progress in XP bar with minor animation.
+- **Code Reviews**: +30 XP (1-50), +25 XP (51-100), +20 XP (101+), collaboration bonuses trigger depending on class abilities.
+- **Documentation Updates**: +25 XP (1-50), +20 XP (51-100), +15 XP (101+), special bonuses for Paladin class with animation on bonus activation.
 
 These activities are tracked in real-time, with the interface responding immediately to changes. Each activity type is mapped to specific animations, ensuring that contributors are rewarded for all efforts, big and small.
 
